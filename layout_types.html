@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            needium
+        </title>
+        <link rel="stylesheet" href="assets/bootstrap.min.css" type="text/css">
+        
+        
+        <style type="text/css" media="screen">
+            @font-face {
+                font-family: 'Kautiva';
+                src: url('http://assets.needium.com.s3.amazonaws.com/fonts/kautiva_bold-webfont.eot');
+                src: url('http://assets.needium.com.s3.amazonaws.com/fonts/kautiva_bold-webfont.eot?iefix') format('eot'),
+                     url('http://assets.needium.com.s3.amazonaws.com/fonts/kautiva_bold-webfont.woff') format('woff'),
+                     url('http://assets.needium.com.s3.amazonaws.com/fonts/kautiva_bold-webfont.ttf') format('truetype'),
+                     url('http://assets.needium.com.s3.amazonaws.com/fonts/kautiva_bold-webfont.svg#webfontGDQzPv6W') format('svg');
+                font-weight: normal;
+                font-style: normal;
+            }
+            body > div.container > section{padding-top:60px;}
+            .preview{box-shadow:0 0 16px #999;margin-right:-2px;}
+            h1,h2,h3,h4,h5,h6{font-family:"Kautiva",sans-serif}
+            h3{color:#86cb00;}
+            output{box-shadow:0 0 16px #999;display:block;float:left;padding:2em}
+        </style>
+    </head>
+    <body>
+        <div class="topbar" data-scrollspy="scrollspy">
+            <div class="topbar-inner">
+                <div class="container">
+                    <a class="brand">Needium Fragments Proposal 0.1</a>
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="#headers">Fragment Headers</a>
+                        </li>
+                        <li class="active">
+                            <a href="#contents">Fragment Contents</a>
+                        </li>
+                        <li class="active">
+                            <a href="#blocks">Fancy Contents</a>
+                        </li>
+                        <li class="active">
+                            <a href="#demo">All Together Now</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pad"></div>
+        </div>
+        
+        <div class="container">
+            <section id="headers" >
+                <div class="page-header">
+                    <h2> Fragment Headers <small>Open to suggestions, could be prettier in markdown.</small></h2>
+                </div>
+                    <p>Fragment headers consist of a title and subtitle. These are represented with the &lt;title&gt; and &lt;subtitle&gt; wrappers. The wrappers can contain any valid markdown.</p>
+                <div class="row">
+                    <div class="span8"><h4>This Markdown</h4></div>
+                    <div class="span8"><h4>Should Generate</h4></div>
+                </div>
+                <div class="row">
+                    <div class="span8">
+                            <pre class="prettyprint">
+&lt;title&gt;My title&lt;/title&gt;
+&lt;subtitle&gt;My Subtitle&lt;subtitle&gt;
+                            </pre>
+                    </div>                    
+                    <div class="span8">
+                        
+                        <pre class="prettyprint">
+&lt;div class="page-header"&gt;
+    &lt;h2&gt;My title &lt;small&gt;My subtitle&lt;/small&gt;&lt;/h2&gt;
+&lt;/div&gt;                
+                        </pre>
+                    </div>
+                </div>
+                <h4>And should look like:</h4>
+                <div class="preview row">
+                    <div class="page-header">
+                        <h2> My title <small>My Subtitle.</small></h2>
+                    </div>
+                </div>
+            </section>      
+            <section id="contents">
+                <div class="page-header">
+                    <h2> Fragment Content <small>basic, no fancy</small></h2>
+                </div>
+                                    <p>Fragment content is wrapped with a &lt;content&gt; wrapper. The wrappers can contain any valid markdown. Different Layouts can be achieved using the "type" attribute on the wrapper tag (see: <a href="#blocks">fancy blocks</a>). The wrapper can contain any valid markdown..</p>
+                <div class="row">
+                    <div class="span8">This Markdown</div>
+                    <div class="span8">Should Generate</div>
+                </div>
+                <div class="row">
+                    <div class="span8">
+                        <pre class="prettyprint">
+&lt;content&gt;
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+&lt;/content&gt;
+                        </pre>
+                    </div>
+                    <div class="span8">
+                        <pre class="prettyprint">
+&lt;div class="row"&gt;
+    &lt;div class="span16"&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+        &lt;p&gt;Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </pre>
+                    </div>
+                </div>
+                <h4>And should look like:</h4>
+                <div class="preview row">
+                    <div class="span16">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+            </section>      
+            
+            <section id="blocks">
+                <div class="page-header">
+                    <h2> Fancy Blocks <small>no basic, moar fancy.</small></h2>
+                </div>
+                <p>Types: duo,trio,quartet,stack-support,support-stack</p>
+                <h2>type: "duo" <small>2 horizontal blocks</small></h2>
+                <div class="row">
+                    <div class="span8"><h4>This Markdown</h4></div>
+                    <div class="span8"><h4>Should Generate</h4></div>
+                </div>
+                <div class="row">
+                    <div class="span8">
+                        <pre class="prettyprint">
+&lt;content type="duo"&gt;
+&lt;box&gt;
+### Markdown For box 1
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+&lt;/box&gt;
+&lt;box&gt;
+### Markdown For box 2
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+&lt;/box&gt;
+&lt;/content&gt;            
+                        </pre>
+                    </div>
+                    <div class="span8">
+                        <pre class="prettyprint">
+&lt;div class="row"&gt;
+    &lt;div class="span8"&gt;
+        &lt;h3&gt;Markdown For box 1&lt;/h3&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="span8"&gt;
+        &lt;h3&gt;Markdown For box 2&lt;/h3&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </pre>
+                    </div>
+                </div>
+                <h4>And should look like:</h4>
+                <div class="preview row">
+                     <div class="span8">
+                            <h3>Markdown For box 1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                        <div class="span8">
+                            <h3>Markdown For box 2</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                </div>
+                <hr>
+                <h2>type: "trio" <small>3 horizontal blocks</small></h2>
+                <div class="row">
+                    <div class="span8"><h4>This Markdown</h4></div>
+                    <div class="span8"><h4>Should Generate</h4></div>
+                </div>
+                <div class="row">
+                    <div class="span8">
+                        <pre class="prettyprint">
+&lt;content type="trio"&gt;
+&lt;box&gt;
+### Markdown For box 1
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+&lt;/box&gt;
+&lt;box&gt;
+### Markdown For box 2
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+&lt;/box&gt;
+&lt;box&gt;
+### Markdown For box 3
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+&lt;/box&gt;
+&lt;/content&gt;            
+                        </pre>
+                    </div>
+                    <div class="span8">
+                        <pre class="prettyprint">
+&lt;div class="row"&gt;
+    &lt;div class="span5"&gt;
+        &lt;h3&gt;Markdown For box 1&lt;/h3&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="span5"&gt;
+        &lt;h3&gt;Markdown For box 2&lt;/h3&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="span5"&gt;
+        &lt;h3&gt;Markdown For box 3&lt;/h3&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </pre>
+                    </div>
+                </div>
+                <h4>And should look like:</h4>
+                <div class="preview row">
+                        <div class="span5">
+                            <h3>Markdown For box 1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                        <div class="span5">
+                            <h3>Markdown For box 2</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                        <div class="span5">
+                            <h3>Markdown For box 3</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                </div>
+                <hr>
+                <h2>type: "quartet" <small>4 horizontal blocks</small></h2>
+                <div class="row">
+                    <div class="span8"><h4>This Markdown</h4></div>
+                    <div class="span8"><h4>Should Generate</h4></div>
+                </div>
+                <div class="row">
+                    <div class="span8">
+                        <pre class="prettyprint">
+&lt;content type="quartet"&gt;
+&lt;box&gt;
+### Markdown For box 1
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+&lt;/box&gt;
+&lt;box&gt;
+### Markdown For box 2
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+&lt;/box&gt;
+&lt;box&gt;
+### Markdown For box 3
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+&lt;/box&gt;
+&lt;box&gt;
+### Markdown For box 4
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+&lt;/box&gt;
+
+&lt;/content&gt;            
+                        </pre>
+                    </div>
+                    <div class="span8">
+                        <pre class="prettyprint">
+&lt;div class="row"&gt;
+    &lt;div class="span4"&gt;
+        &lt;h3&gt;Markdown For box 1&lt;/h3&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="span4"&gt;
+        &lt;h3&gt;Markdown For box 2&lt;/h3&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="span4"&gt;
+        &lt;h3&gt;Markdown For box 3&lt;/h3&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="span4"&gt;
+        &lt;h3&gt;Markdown For box 4&lt;/h3&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                        </pre>
+                    </div>
+                </div>
+                <h4>And should look like:</h4>
+                <div class="preview row">
+                        <div class="span4">
+                            <h3>Markdown For box 1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                        <div class="span4">
+                            <h3>Markdown For box 2</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                        <div class="span4">
+                            <h3>Markdown For box 3</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                        <div class="span4">
+                            <h3>Markdown For box 4</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                </div>
+                
+                 <hr>
+                    <h2>type: "stack-support" <small>stacks on the left, support text on the right</small></h2>
+                    <div class="row">
+                        <div class="span8"><h4>This Markdown</h4></div>
+                        <div class="span8"><h4>Should Generate</h4></div>
+                    </div>
+                    <div class="row">
+                        <div class="span8">
+                            <pre class="prettyprint">
+&lt;content type="stack-support"&gt;
+    &lt;box&gt;
+        ### Box 1
+
+        Box 1 paragraph.
+    &lt;/box&gt;
+    &lt;box&gt;
+        ### Box 2
+
+        Box 2 paragraph.
+    &lt;/box&gt;
+    &lt;box&gt;
+        ### Box 3
+
+        Box 3 paragraph.
+    &lt;/box&gt;
+    &lt;support&gt;
+        ### Support Text
+
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    &lt;/support&gt;
+&lt;/content&gt;
+                            </pre>
+                        </div>
+                        <div class="span8">
+                            <pre class="prettyprint">
+&lt;div class="row"&gt;
+    &lt;div class="span8"&gt;
+        &lt;div class="clearfix"&gt;
+            &lt;h3&gt;Markdown For box 1&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="clearfix"&gt;
+            &lt;h3&gt;Markdown For box 2&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="clearfix"&gt;
+            &lt;h3&gt;Markdown For box 4&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+        &lt;/div&gt;                            
+    &lt;/div&gt;
+    &lt;div class="span8"&gt;
+        &lt;h3&gt;Markdown For support text&lt;/h3&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </pre>
+                        </div>
+                    </div>
+                    <h4>And should look like:</h4>
+                    <div class="preview row">
+                        
+                        <div class="span8">
+                            <div class="clearfix">
+                                <h3>Markdown For box 1</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                            <div class="clearfix">
+                                <h3>Markdown For box 2</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                            <div class="clearfix">
+                                <h3>Markdown For box 4</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>                            
+                        </div>
+                        <div class="span8">
+                            <h3>Markdown For support text</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+
+                        </div>
+                    </div>
+                 <hr>
+                    <h2>type: "support-stack" <small>support text on the left, stacks on the right</small></h2>
+                    <div class="row">
+                        <div class="span8"><h4>This Markdown</h4></div>
+                        <div class="span8"><h4>Should Generate</h4></div>
+                    </div>
+                    <div class="row">
+                        <div class="span8">
+                            <pre class="prettyprint">
+&lt;content type="support-stack"&gt;
+    &lt;support&gt;
+        ### Support Text
+
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    &lt;/support&gt;
+    &lt;box&gt;
+        ### Box 1
+
+        Box 1 paragraph.
+    &lt;/box&gt;
+    &lt;box&gt;
+        ### Box 2
+
+        Box 2 paragraph.
+    &lt;/box&gt;
+    &lt;box&gt;
+        ### Box 3
+
+        Box 3 paragraph.
+    &lt;/box&gt;
+&lt;/content&gt;
+                            </pre>
+                        </div>
+                        <div class="span8">
+                            <pre class="prettyprint">
+&lt;div class="row"&gt;
+    &lt;div class="span8"&gt;
+        &lt;h3&gt;Markdown For support text&lt;/h3&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="span8"&gt;
+        &lt;div class="clearfix"&gt;
+            &lt;h3&gt;Markdown For box 1&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="clearfix"&gt;
+            &lt;h3&gt;Markdown For box 2&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="clearfix"&gt;
+            &lt;h3&gt;Markdown For box 4&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+        &lt;/div&gt;                            
+    &lt;/div&gt;
+&lt;/div&gt;
+                            </pre>
+                        </div>
+                    </div>
+                    <h4>And should look like:</h4>
+                    <div class="preview row">
+                        <div class="span8">
+                            <h3>Markdown For support text</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                        <div class="span8">
+                            <div class="clearfix">
+                                <h3>Markdown For box 1</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                            <div class="clearfix">
+                                <h3>Markdown For box 2</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                            <div class="clearfix">
+                                <h3>Markdown For box 4</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>                            
+                        </div>
+                    </div>               
+                
+            </section>
+            <section id="demo">
+                <div class="page-header">
+                    <h2> All together now! <small><b>Note</b>: fragments should actually be simpler than this.</small></h2>
+                </div>
+                <div class="row">
+                    <div class="span8"><h4>This Markdown</h4></div>
+                    <div class="span8"><h4>Should Generate</h4></div>
+                </div>
+                <div class="row">
+                    <div class="span8">
+                        <pre class="compiled-markdown-examples">
+                        </pre>
+                    </div>
+                    <div class="span8">
+                        <pre class="compiled-rendering-examples">
+                        </pre>
+                    </div>
+                </div>
+                
+            </section>
+            <h4>And should look like:</h4>
+            <output>
+
+            </output>
+        </div>
+            
+        
+      
+        <script src="assets/jquery-1.5.2.min.js"></script>
+        <script src="assets/bootstrap-dropdown.js"></script>
+        <script src="assets/bootstrap-twipsy.js"></script>
+        <script src="assets/bootstrap-scrollspy.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(function() {
+                pres = [[],[]]
+                previews = []
+                $('pre').each(function (i) {
+                    pres[i%2].push($(this).html())
+                });
+                $('.preview').each(function(i) {
+                    previews.push( '<div class="row">'+$(this).html()+'</div>')
+                });
+                $('.compiled-markdown-examples').html( pres[0].join("\n") )
+                $('.compiled-rendering-examples').html( pres[1].join("\n") )
+                $('output').html( previews.join("\n"))
+                console.log( )
+            });
+        </script>
+    </body>
+</html>
